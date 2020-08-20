@@ -1,4 +1,4 @@
-Name:           fedy
+Name:           nectar
 Version:        5.0.10
 Release:        1%{?dist}
 Summary:        Install codecs and additional software
@@ -14,13 +14,13 @@ BuildRequires:  libappstream-glib
 %global obsolete_file L2V0Yy95dW0ucmVwb3MuZC91bml0ZWRycG1zLnJlcG8K
 
 # Obsoletes introduced in f26
-Provides: fedy-core = %{version}-%{release}
-Obsoletes: fedy-core < 4.5.1-1
-Provides: fedy-plugins = %{version}-%{release}
-Obsoletes: fedy-plugins < 4.5.1-1
+Provides: nectar-core = %{version}-%{release}
+Obsoletes: nectar-core < 4.5.1-1
+Provides: nectar-plugins = %{version}-%{release}
+Obsoletes: nectar-plugins < 4.5.1-1
 # Obsoletes introduced in f29
-Obsoletes: fedy-release < 5.0.0-4
-Provides: fedy-release = 5.0.0-4
+Obsoletes: nectar-release < 5.0.0-4
+Provides: nectar-release = 5.0.0-4
 
 Requires: dnf-plugins-core
 Requires: hicolor-icon-theme
@@ -34,7 +34,7 @@ Requires: jq
 
 
 %description
-Fedy lets you install multimedia codecs and additional software that Fedora
+Nectar lets you install multimedia codecs and additional software that Fedora
 doesn't want to ship, like mp3 support, Adobe Flash, Oracle Java etc., and
 much more with just a few clicks.
 
