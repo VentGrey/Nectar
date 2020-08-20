@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Nectar
+GenericName=Nectar
+Icon=nectar
+Comment=Install codecs and additional software
+Exec=nectar
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=clean;codec;funtoo;fix;install;proprietary;
