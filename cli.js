@@ -7,7 +7,7 @@ const
     PluginRepository = imports.repository.PluginRepository;
 
 const
-    FedyOption = {
+    NectarOption = {
         LIST: new Option("list", GLib.OptionArg.NONE, "List available plugins", null, false),
         ONELINE: new Option("oneline", GLib.OptionArg.NONE, "Render each plugin description on one line", null, false),
         STATUS: new Option("status", GLib.OptionArg.STRING_ARRAY, "Report plugin status", "<plugin>", true),
@@ -15,13 +15,13 @@ const
         REMOVE: new Option("remove", GLib.OptionArg.STRING_ARRAY, "Remove a plugin", "<plugin>", true),
         FORCE: new Option("force", GLib.OptionArg.NONE, "Force plugins action", null, false)
     },
-    FedyOptions = [
-        FedyOption.LIST,
-        FedyOption.ONELINE,
-        FedyOption.STATUS,
-        FedyOption.ADD,
-        FedyOption.REMOVE,
-        FedyOption.FORCE
+    NectarOptions = [
+        NectarOption.LIST,
+        NectarOption.ONELINE,
+        NectarOption.STATUS,
+        NectarOption.ADD,
+        NectarOption.REMOVE,
+        NectarOption.FORCE
     ];
 
 
@@ -51,28 +51,28 @@ var PluginAction = new Lang.Class({
     },
 
     isStatus() {
-        return FedyOption.STATUS.match(this.option.name);
+        return NectarOption.STATUS.match(this.option.name);
     }
 });
 
-var FedyCli = new Lang.Class({
-    Name: "FedyCli",
+var NectarCli = new Lang.Class({
+    Name: "NectarCli",
 
-    _init(fedy) {
-        FedyOptions.forEach(option => option.registerIn(fedy.application));
+    _init(nectar) {
+        NectarOptions.forEach(option => option.registerIn(fedy.application));
 
-        this.fedy = fedy;
+        this.nectar = fedy;
 
-        if (typeof fedy.application.set_option_context_summary !== "undefined") {
-            fedy.application.set_option_context_parameter_string("app.js");
-            fedy.application.set_option_context_description("");
-            fedy.application.set_option_context_summary(
-                "  fedy --list [--oneline]\n" +
-                "  fedy [--force] [--status <plugin>]... [--remove <plugin>]... [--add <plugin>]..."
+        if (typeof nectar.application.set_option_context_summary !== "undefined") {
+            nectar.application.set_option_context_parameter_string("app.js");
+            nectar.application.set_option_context_description("");
+            nectar.application.set_option_context_summary(
+                "  nectar --list [--oneline]\n" +
+                "  nectar [--force] [--status <plugin>]... [--remove <plugin>]... [--add <plugin>]..."
             );
         }
 
-        this.fedy.application.connect("handle_local_options", Lang.bind(this, this._onOptions));
+        this.nectar.application.connect("handle_local_options", Lang.bind(this, this._onOptions));
     },
 
     _onOptions(application, options) {
@@ -80,10 +80,10 @@ var FedyCli = new Lang.Class({
             return -1;
         }
 
-        this.pluginRepository = new PluginRepository(this.fedy);
+        this.pluginRepository = new PluginRepository(this.nectar);
 
         const loop = GLib.MainLoop.new(null, false);
-        let promiseOfReports = (FedyOption.LIST.in(options)) ?
+        let promiseOfReports = (NectarOption.LIST.in(options)) ?
             this._promiseOfCategoryReports(options) :
             this._promiseOfActionReports(options);
 
@@ -98,11 +98,11 @@ var FedyCli = new Lang.Class({
     },
 
     _isCliOptions(options) {
-        return FedyOptions.some(option => option.in(options));
+        return NectarOptions.some(option => option.in(options));
     },
 
     _promiseOfCategoryReports(options) {
-        const oneline = FedyOption.ONELINE.in(options);
+        const oneline = NectarOption.ONELINE.in(options);
         return this.pluginRepository
             .listCategories()
             .map(category => {
@@ -135,8 +135,8 @@ var FedyCli = new Lang.Class({
     },
 
     _promiseOfActionReports: function (options) {
-        const forced = FedyOption.FORCE.in(options);
-        return FedyOptions
+        const forced = NectarOption.FORCE.in(options);
+        return NectarOptions
             .filter(option => option.in(options) && option.isAction)
             .flatMap(option => this._pluginActions(options, option, forced))
             .map(pluginActions => this._promiseOfActionReport(pluginActions));
@@ -197,9 +197,9 @@ var FedyCli = new Lang.Class({
 
     _isAlreadyApplied(pluginAction, pluginStatus) {
         switch (pluginAction.option.name) {
-        case FedyOption.ADD.name:
+        case NectarOption.ADD.name:
             return pluginStatus.code === 0;
-        case FedyOption.REMOVE.name:
+        case NectarOption.REMOVE.name:
             return pluginStatus.code !== 0;
         default:
             return false;
