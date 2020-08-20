@@ -1,5 +1,3 @@
 #!/bin/bash
 
-dnf copr enable atim/alacritty -y
-
-dnf install alacritty -y
+emerge --ask n x11-terms/alacritty

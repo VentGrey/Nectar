@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root -s uninstall.sh"
 		},
-		"status": { "command": "rpm --quiet --query alacritty" }
+		"status": { "command": "equery --quiet list alacritty" }
 	}
 }
