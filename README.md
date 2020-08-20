@@ -4,55 +4,46 @@ Fedy lets you install multimedia codecs and additional software that Fedora [doe
 
 ### Installation
 
-Installation instructions can be found on https://github.com/rpmfusion-infra/fedy.
+Installation instructions can be found below.
 
 _Do not follow instructions from any other source!_
 
 ```
-# RPM Fusion
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# Make
 
-# Install fedy copr repository
-sudo dnf copr enable kwizart/fedy
-
-# Install fedy
-sudo dnf install fedy -y
-
-# For EL8 (RHEL, CentOS and derivates), the support is still experimental (please report issues)
+sudo make install
 
 
 ```
 
 ### Usage
 
-After installation, search for `Fedy` in the menu/overview or type `fedy` in the terminal.
+After installation, search for `Nectar` in the menu/overview or type `Nectar` in the terminal.
 
 ### Plugin structure
 
-Plugins can be placed under `~/.local/share/fedy/plugins/`, or the system plugins directory.
+Plugins can be placed under `~/.local/share/nectar/plugins/`, or the system plugins directory.
 
-Each plugin is a directory with the suffix `.plugin`, which consist of a JSON formatted metadata file. The metadata file contains information about the plugin and describes how `Fedy` should run the tasks.
+Each plugin is a directory with the suffix `.plugin`, which consist of a JSON formatted metadata file. The metadata file contains information about the plugin and describes how `nectar` should run the tasks.
 
-The plugins can run any command or scripts (`bash`, `python` etc.). In addtion to the system commands, `Fedy` provides an additional command, `run-as-root` to allow running commands (e.g.- `run-as-root touch /some/file/somewhere`) or scripts (e.g.- `run-as-root -s do-stuff.sh`) as root.
+The plugins can run any command or scripts (`bash`, `python` etc.). In addtion to the system commands, `Nectar` provides an additional command, `run-as-root` to allow running commands (e.g.- `run-as-root touch /some/file/somewhere`) or scripts (e.g.- `run-as-root -s do-stuff.sh`) as root.
 
-Have a look at the existing plugins to know more about how to write plugins for `Fedy`.
+Have a look at the existing plugins to know more about how to write plugins for `Nectar`.
 
 ### Source code
 
-Source code is publicly available on GitHub, and automatically cloned to GitLab:
-
+Source code is publicly available on GitHub:
 
 ```
-
-$ git clone https://github.com/rpmfusion-infra/fedy
+$ git clone https://github.com/VentGrey/Nectar
 ```
 
 ### Bugs and feature requests
 
-Please submit bugs and feature requests [here][fedy/issues]. Pull requests are
+Please submit bugs and feature requests [here][nectar/issues]. Pull requests are
 always welcome.
 
-[fedy/issues]: https://github.com/rpmfusion-infra/fedy/issues
+[nectar/issues]: https://github.com/VentGrey/Nectar/issues
 
 ### License
 
