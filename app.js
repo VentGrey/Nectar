@@ -11,7 +11,7 @@ const Notify = imports.gi.Notify;
 const Pango = imports.gi.Pango;
 const Lang = imports.lang;
 const System = imports.system;
-const NectarCli = imports.cli.FedyCli;
+const NectarCli = imports.cli.NectarCli;
 const ByteArray = imports.byteArray;
 
 const APP_NAME = "Nectar";

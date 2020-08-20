@@ -59,9 +59,9 @@ var NectarCli = new Lang.Class({
     Name: "NectarCli",
 
     _init(nectar) {
-        NectarOptions.forEach(option => option.registerIn(fedy.application));
+        NectarOptions.forEach(option => option.registerIn(nectar.application));
 
-        this.nectar = fedy;
+        this.nectar = nectar;
 
         if (typeof nectar.application.set_option_context_summary !== "undefined") {
             nectar.application.set_option_context_parameter_string("app.js");
