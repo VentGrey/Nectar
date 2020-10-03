@@ -1,6 +1,24 @@
 ### Introduction
 
-Fedy lets you install multimedia codecs and additional software that Fedora [doesn't want to ship](http://fedoraproject.org/wiki/Forbidden_items?rd=ForbiddenItems), like H264 support, Adobe Flash, Oracle Java etc., and much more with just a few clicks.
+Nectar is a Fedy (Fedora Tool) derivative aimed for new Pop! OS users.
+
+The Pop! Os default shop app comes with a handful of packages, ideal to install both .deb and flatpak
+packages, however it still has some minor issues that I'd like to correct myself but, being unable to
+program in Vala and Meson I decided to use this project previously used in Funtoo Linux.
+
+The current Pop Shop still has these issues:
+
+* Anything outside pop-gtk theme looks broken.
+* Flatpak and Deb installations are confusing sometimes.
+* Some popular apps are Flatpak-installable only.
+* No support for complete programming toolchains
+* Heavy memory usage (Around 300 ~ 400 MB)
+* Based on ElementaryOS technology and not compatible with other distros.
+
+Nectar aims to provide a **VERY REDUCED** alternative for those who just want to install and forget. It doesn't
+aim to replace pop shop in any way possible. Since packages are added manually this doesn't sync with repositories
+outside itself. In exchange for that this can be extended to install third party .deb sources, flatpaks and even
+snaps (Though, pop! os doesn't like snap and neither do I).
 
 ### Installation
 
@@ -9,16 +27,19 @@ Installation instructions can be found below.
 _Do not follow instructions from any other source!_
 
 ```
-# Make
+# Test in local folder
+
+make run
+
+# Install system wide
 
 sudo make install
-
 
 ```
 
 ### Usage
 
-After installation, search for `Nectar` in the menu/overview or type `Nectar` in the terminal.
+After installation, search for `Nectar` in the menu/overview or type `nectar` in the terminal.
 
 ### Plugin structure
 
