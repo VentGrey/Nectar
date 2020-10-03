@@ -1,0 +1,18 @@
+{
+	"icon": "Rust",
+	"label": "Rust Complete Toolkit",
+	"description": "Rust is a General Purpose / Systems Programming Language",
+	"license": "Apache License 2.0, MIT License",
+	"category": "Development Tools",
+	"scripts": {
+		"exec": {
+			"label": "Install",
+			"command": "run-as-root -s install.sh"
+		},
+		"undo": {
+			"label": "Remove",
+			"command": "run-as-root -s uninstall.sh"
+		},
+		"status": { "command": "rustup -V" }
+	}
+}
