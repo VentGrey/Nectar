@@ -40,26 +40,26 @@ var Plugin = new Lang.Class({
 var PluginRepository = new Lang.Class({
     Name: "PluginRepository",
 
-    _init(fedy) {
-        this.fedy = fedy;
-        this.fedy._loadConfig();
-        this.fedy._loadPlugins();
+    _init(nectar) {
+        this.nectar = fedy;
+        this.nectar._loadConfig();
+        this.nectar._loadPlugins();
 
         this.plugins = {};
-        for (let category in this.fedy._plugins) {
-            if (this.fedy._plugins.hasOwnProperty(category)) {
-                this._toPlugin(this.fedy._plugins[category]);
-                this.plugins = Object.assign({}, this.plugins, this.fedy._plugins[category]);
+        for (let category in this.nectar._plugins) {
+            if (this.nectar._plugins.hasOwnProperty(category)) {
+                this._toPlugin(this.nectar._plugins[category]);
+                this.plugins = Object.assign({}, this.plugins, this.nectar._plugins[category]);
             }
         }
     },
 
     listCategories() {
-        return Object.keys(this.fedy._plugins).sort();
+        return Object.keys(this.nectar._plugins).sort();
     },
 
     listByCategory(category) {
-        return Object.values(this.fedy._plugins[category]);
+        return Object.values(this.nectar._plugins[category]);
     },
 
     getByName(pluginName) {
@@ -72,8 +72,8 @@ var PluginRepository = new Lang.Class({
                 resolve(new PluginStatus());
             }
 
-            this.fedy._getPluginStatus(plugin, (action, statusCode) => {
-                const [ isMalicious, maliciousPart, description ] = this.fedy._scanMaliciousCommand(plugin, action.command),
+            this.nectar._getPluginStatus(plugin, (action, statusCode) => {
+                const [ isMalicious, maliciousPart, description ] = this.nectar._scanMaliciousCommand(plugin, action.command),
                     pluginStatus = new PluginStatus(statusCode, action, isMalicious, maliciousPart, description);
                 resolve(pluginStatus);
             });
@@ -82,7 +82,7 @@ var PluginRepository = new Lang.Class({
 
     promiseOfCommandStatus(path, command) {
         return new Promise((resolve) => {
-            this.fedy._queueCommand(path, command, (pid, commandStatusCode) => {
+            this.nectar._queueCommand(path, command, (pid, commandStatusCode) => {
                 resolve(commandStatusCode);
             });
         });
