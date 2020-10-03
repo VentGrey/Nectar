@@ -1,5 +1,8 @@
 # Install Nectar
 
+run:
+	./app.js
+
 install-core:
 	install -dm755 $(DESTDIR)/usr/bin/
 	install -dm755 $(DESTDIR)/usr/share/nectar/
