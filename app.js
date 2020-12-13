@@ -1,8 +1,8 @@
-#!/usr/bin/gjs
+#! /usr/bin/gjs
 
-imports.searchPath.unshift('.');
+imports.searchPath.unshift(".");
 // force GTK 3
-imports.gi.versions.Gtk = '3.0';
+imports.gi.versions.Gtk = "3.0";
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const Gtk = imports.gi.Gtk;
@@ -35,10 +35,10 @@ const Application = new Lang.Class({
 
     _buildUI: function() {
         this._window = new Gtk.ApplicationWindow({
-                application: this.application,
-                window_position: Gtk.WindowPosition.CENTER,
-                title: APP_NAME
-            });
+            application: this.application,
+            window_position: Gtk.WindowPosition.CENTER,
+            title: APP_NAME
+        });
 
         try {
             let icon = Gtk.IconTheme.get_default().load_icon("nectar", 48, 0);
@@ -121,8 +121,8 @@ const Application = new Lang.Class({
 
         if (file.query_exists(null)) {
             let size = file.query_info("standard::size",
-                                       Gio.FileQueryInfoFlags.NONE,
-                                       null).get_size();
+                Gio.FileQueryInfoFlags.NONE,
+                null).get_size();
 
             try {
                 let data = file.read(null).read_bytes(size, null).get_data();
@@ -195,7 +195,7 @@ const Application = new Lang.Class({
 
         try {
             [ ok, pid ] = GLib.spawn_async(workingdir, argvp, envp,
-                                       GLib.SpawnFlags.SEARCH_PATH_FROM_ENVP | GLib.SpawnFlags.DO_NOT_REAP_CHILD, null);
+                GLib.SpawnFlags.SEARCH_PATH_FROM_ENVP | GLib.SpawnFlags.DO_NOT_REAP_CHILD, null);
         } catch (e) {
             print("Failed to run process: " + e.message);
 
