@@ -3,14 +3,14 @@
 # Instructions adopted from
 # http://apt.anydesk.com/howto.html
 
-cat > /etc/yum.repos.d/AnyDesk-Fedora.repo << "EOF" 
-[anydesk]
-name=AnyDesk Fedora - stable
-baseurl=http://apt.anydesk.com/fedora/$basearch/
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://keys.anydesk.com/repos/RPM-GPG-KEY
-EOF
+# Add anydesk repo key
+wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
 
-dnf install anydesk -y
+# Create a new source list file
+echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+
+# Update apt
+apt update
+
+# Install anydesk
+apt install anydesk

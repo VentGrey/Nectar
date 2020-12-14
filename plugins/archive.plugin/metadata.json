@@ -7,12 +7,12 @@
 	"scripts": {
 		"exec": {
 			"label": "Install",
-			"command": "run-as-root dnf -y install cabextract lzip p7zip p7zip-plugins unrar"
+			"command": "run-as-root apt -y install cabextract lzip p7zip p7zip-plugins unrar"
 		},
 		"undo": {
 			"label": "Remove",
-			"command": "run-as-root dnf -y remove cabextract lzip p7zip p7zip-plugins unrar"
+			"command": "run-as-root apt -y remove cabextract lzip p7zip p7zip-plugins unrar"
 		},
-		"status": { "command": "apt --quiet --query cabextract lzip p7zip p7zip-plugins unrar" }
+		"status": { "command": "dpkg -s cabextract lzip p7zip p7zip-plugins unrar" }
 	}
 }
