@@ -254,8 +254,8 @@ const Application = new Lang.Class({
 
                 if (file.query_exists(null)) {
                     let size = file.query_info("standard::size",
-                                               Gio.FileQueryInfoFlags.NONE,
-                                               null).get_size();
+                        Gio.FileQueryInfoFlags.NONE,
+                        null).get_size();
 
                     try {
                         let stream = file.open_readwrite(null).get_input_stream();
@@ -663,7 +663,7 @@ const Application = new Lang.Class({
 
         try {
             fileEnum = dir.enumerate_children("standard::name,standard::type",
-                                              Gio.FileQueryInfoFlags.NONE, null);
+                Gio.FileQueryInfoFlags.NONE, null);
         } catch (e) {
             fileEnum = null;
         }
