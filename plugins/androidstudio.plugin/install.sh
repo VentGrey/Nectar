@@ -2,10 +2,10 @@
 
 dnf -y install  libgcc.i686 glibc.i686 ncurses-libs.i686 zlib.i686 bzip2-libs.i686 glibc-devel.i686 libstdc++.i686 libX11-devel.i686 libXrender.i686 libXrandr.i686
 
-CACHEDIR="/var/cache/fedy/androidstudio";
+CACHEDIR="/var/cache/nectar/androidstudio";
 
 mkdir -p "$CACHEDIR"
-cd "$CACHEDIR"
+cd "$CACHEDIR" || exit
 
 URL=$(wget "http://developer.android.com/sdk/index.html" -O - | grep -o "https://dl.google.com/.*/[0-9.]*/android-studio-ide-[0-9.]*-linux.zip" | head -n 1)
 FILE=${URL##*/}
