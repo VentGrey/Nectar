@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove cabextract lzip p7zip p7zip-plugins unrar"
 		},
-		"status": { "command": "rpm --quiet --query cabextract lzip p7zip p7zip-plugins unrar" }
+		"status": { "command": "apt --quiet --query cabextract lzip p7zip p7zip-plugins unrar" }
 	}
 }

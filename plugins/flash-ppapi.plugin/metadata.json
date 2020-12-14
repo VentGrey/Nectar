@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove flash-player-ppapi"
 		},
-		"status": { "command": "rpm --quiet --query flash-player-ppapi" }
+		"status": { "command": "apt --quiet --query flash-player-ppapi" }
 	}
 }

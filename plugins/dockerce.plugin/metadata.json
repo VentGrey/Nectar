@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove docker-ce"
 		},
-		"status": { "command": "rpm --quiet --query docker-ce" }
+		"status": { "command": "apt --quiet --query docker-ce" }
 	}
 }

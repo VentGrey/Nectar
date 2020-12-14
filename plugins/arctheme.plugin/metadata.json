@@ -12,6 +12,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove arc-theme"
 		},
-		"status": { "command": "rpm --quiet --query arc-theme" }
+		"status": { "command": "apt --quiet --query arc-theme" }
 	}
 }

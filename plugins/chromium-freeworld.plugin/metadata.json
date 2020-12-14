@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove chromium-freeworld"
 		},
-		"status": { "command": "rpm --quiet --query chromium-freeworld" }
+		"status": { "command": "apt --quiet --query chromium-freeworld" }
 	}
 }

@@ -2,7 +2,7 @@
 
 gpgkey=$"https://packages.microsoft.com/keys/microsoft.asc"
 
-rpm --import $gpgkey
+apt --import $gpgkey
 
 cat <<EOF > /etc/yum.repos.d/azurecli.repo
 [azurecli]

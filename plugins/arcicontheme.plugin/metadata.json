@@ -12,6 +12,6 @@
 			"label": "Remove",
 			"command": "run-as-root -s uninstall.sh"
 		},
-		"status": { "command": "rpm --quiet --query arc-icon-theme" }
+		"status": { "command": "apt --quiet --query arc-icon-theme" }
 	}
 }

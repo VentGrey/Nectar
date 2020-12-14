@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove dino && rm -rf /etc/yum.repos.d/network:messaging:xmpp:dino.repo"
 		},
-		"status": { "command": "rpm --quiet --query dino" }
+		"status": { "command": "apt --quiet --query dino" }
 	}
 }

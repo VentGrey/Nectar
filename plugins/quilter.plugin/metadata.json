@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove quilter"
 		},
-		"status": { "command": "rpm --quiet --query quilter" }
+		"status": { "command": "apt --quiet --query quilter" }
 	}
 }

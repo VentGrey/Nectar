@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root -s remove.sh "
 		},
-		"status": { "command": "rpm --quiet --query libva-intel-driver" }
+		"status": { "command": "apt --quiet --query libva-intel-driver" }
 	}
 }

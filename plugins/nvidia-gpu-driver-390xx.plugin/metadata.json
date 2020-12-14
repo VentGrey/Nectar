@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root -s remove.sh "
 		},
-		"status": { "command": "rpm --quiet --query xorg-x11-drv-nvidia-390xx" }
+		"status": { "command": "apt --quiet --query xorg-x11-drv-nvidia-390xx" }
 	}
 }

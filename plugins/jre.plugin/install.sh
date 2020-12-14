@@ -11,13 +11,13 @@ fi
 mkdir -p "$CACHEDIR"
 cd "$CACHEDIR"
 
-URL=$(wget $(wget "http://www.oracle.com/technetwork/java/javase/downloads/index.html" -O - | tr ' ' '\n' | grep "/technetwork/java/javase/downloads/jre8" | head -n 1 | cut -d\" -f 2 | sed -e 's/^/http:\/\/www.oracle.com/') -O - | grep "Linux ${ARCH}" | grep ".rpm" | cut -d\" -f 12 | grep -v demos | head -n 1)
+URL=$(wget $(wget "http://www.oracle.com/technetwork/java/javase/downloads/index.html" -O - | tr ' ' '\n' | grep "/technetwork/java/javase/downloads/jre8" | head -n 1 | cut -d\" -f 2 | sed -e 's/^/http:\/\/www.oracle.com/') -O - | grep "Linux ${ARCH}" | grep ".apt" | cut -d\" -f 12 | grep -v demos | head -n 1)
 FILE=${URL##*/}
 
 wget --header "Cookie: oraclelicense=a" -c "$URL" -O "$FILE"
 
 if [[ -f "$FILE" ]]; then
-    rpm -Uvh "$FILE"
+    apt -Uvh "$FILE"
 else
     exit 1
 fi

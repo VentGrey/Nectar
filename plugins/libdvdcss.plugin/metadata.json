@@ -10,8 +10,8 @@
 		},
 		"undo": {
 			"label": "Remove",
-			"command": "run-as-root dnf -y remove libdvdcss rpmfusion-free-release-tainted livna-release"
+			"command": "run-as-root dnf -y remove libdvdcss aptfusion-free-release-tainted livna-release"
 		},
-		"status": { "command": "rpm --quiet --query libdvdcss" }
+		"status": { "command": "apt --quiet --query libdvdcss" }
 	}
 }

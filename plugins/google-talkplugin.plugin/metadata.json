@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove google-talkplugin"
 		},
-		"status": { "command": "rpm --quiet --query google-talkplugin" }
+		"status": { "command": "apt --quiet --query google-talkplugin" }
 	}
 }

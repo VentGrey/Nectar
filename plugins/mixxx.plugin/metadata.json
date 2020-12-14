@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove mixxx"
 		},
-		"status": { "command": "rpm --quiet --query mixxx" }
+		"status": { "command": "apt --quiet --query mixxx" }
 	}
 }

@@ -7,12 +7,12 @@
 	"scripts": {
 		"exec": {
 			"label": "Install",
-			"command": "run-as-root dnf -y install https://download.cdn.viber.com/desktop/Linux/viber.rpm"
+			"command": "run-as-root dnf -y install https://download.cdn.viber.com/desktop/Linux/viber.apt"
 		},
 		"undo": {
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove viber"
 		},
-		"status": { "command": "rpm --quiet --query viber" }
+		"status": { "command": "apt --quiet --query viber" }
 	}
 }

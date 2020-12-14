@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove wps-office"
 		},
-		"status": { "command": "rpm --quiet --query wps-office" }
+		"status": { "command": "apt --quiet --query wps-office" }
 	}
 }

@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove lutris"
 		},
-		"status": { "command": "rpm --quiet --query lutris" }
+		"status": { "command": "apt --quiet --query lutris" }
 	}
 }

@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove nautilus-dropbox"
 		},
-		"status": { "command": "rpm --quiet --query nautilus-dropbox" }
+		"status": { "command": "apt --quiet --query nautilus-dropbox" }
 	}
 }

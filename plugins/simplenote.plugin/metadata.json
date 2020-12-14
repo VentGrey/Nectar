@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf remove -y simplenote"
 		},
-		"status": { "command": "rpm --quiet --query simplenote" }
+		"status": { "command": "apt --quiet --query simplenote" }
 	}
 }

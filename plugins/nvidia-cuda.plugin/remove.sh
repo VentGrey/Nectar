@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# https://rpmfusion.org/Howto/CUDA
+# https://aptfusion.org/Howto/CUDA
 
 if [ -f /etc/yum.repos.d/cuda-fedora29.repo ] ; then
   rm -f /etc/yum.repos.d/cuda-fedora29.repo

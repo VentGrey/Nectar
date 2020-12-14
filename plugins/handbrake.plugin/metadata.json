@@ -12,6 +12,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf remove HandBrake-gui"
 		},
-		"status": { "command": "rpm --quiet --query HandBrake-gui" }
+		"status": { "command": "apt --quiet --query HandBrake-gui" }
 	}
 }

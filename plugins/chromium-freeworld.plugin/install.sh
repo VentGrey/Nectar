@@ -2,7 +2,7 @@
 
 
 # Disable legacy chromium-libs-media-freeworld
-rpm --query --quiet chromium-libs-media-freeworld
+apt --query --quiet chromium-libs-media-freeworld
 has_legacy_chromium=$?
 
 if [ x${has_legacy_chromium} == x"0" ] ; then

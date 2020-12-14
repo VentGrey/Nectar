@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove google-webdesigner"
 		},
-		"status": { "command": "rpm --quiet --query google-webdesigner" }
+		"status": { "command": "apt --quiet --query google-webdesigner" }
 	}
 }

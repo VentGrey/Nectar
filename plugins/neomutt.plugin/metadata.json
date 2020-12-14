@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove neomutt && run-as-root dnf copr remove flatcap/neomutt -y"
 		},
-		"status": { "command": "rpm --quiet --query neomutt" }
+		"status": { "command": "apt --quiet --query neomutt" }
 	}
 }

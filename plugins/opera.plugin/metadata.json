@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root -s uninstall.sh"
 		},
-		"status": { "command": "rpm --quiet --query opera-stable" }
+		"status": { "command": "apt --quiet --query opera-stable" }
 	}
 }

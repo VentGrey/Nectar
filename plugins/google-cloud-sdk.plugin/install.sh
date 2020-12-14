@@ -10,7 +10,7 @@ enabled=1
 gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
-       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+       https://packages.cloud.google.com/yum/doc/apt-package-key.gpg
 EOM
 
 # Install the Cloud SDK

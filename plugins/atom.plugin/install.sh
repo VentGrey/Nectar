@@ -8,12 +8,12 @@ mkdir -p "$CACHEDIR"
 cd "$CACHEDIR"
 
 # Finding latest release and downloading them.
-# As of now atom only has x86_64 package for .rpm
+# As of now atom only has x86_64 package for .apt
 
 URL=$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/atom/atom/releases/latest)
-wget https://github.com/atom/atom/releases/download/${URL##*/}/atom.x86_64.rpm
+wget https://github.com/atom/atom/releases/download/${URL##*/}/atom.x86_64.apt
 
-dnf -y install ./atom.x86_64.rpm zenity
+dnf -y install ./atom.x86_64.apt zenity
 
 # Install plugin for updating on linux which
 # Disabling it by default for performance (One can enable it when required)

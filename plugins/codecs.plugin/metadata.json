@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove gstreamer1-libav"
 		},
-		"status": { "command": "rpm --quiet --query gstreamer1-libav" }
+		"status": { "command": "apt --quiet --query gstreamer1-libav" }
 	}
 }

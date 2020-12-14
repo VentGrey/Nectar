@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove moka-icon-theme"
 		},
-		"status": { "command": "rpm --quiet --query moka-icon-theme" }
+		"status": { "command": "apt --quiet --query moka-icon-theme" }
 	}
 }

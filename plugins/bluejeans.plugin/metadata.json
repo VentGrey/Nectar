@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove bluejeans-v2"
 		},
-		"status": { "command": "rpm --quiet --query bluejeans-v2" }
+		"status": { "command": "apt --quiet --query bluejeans-v2" }
 	}
 }

@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove VirtualBox akmod-VirtualBox"
 		},
-		"status": { "command": "rpm --quiet --query VirtualBox" }
+		"status": { "command": "apt --quiet --query VirtualBox" }
 	}
 }

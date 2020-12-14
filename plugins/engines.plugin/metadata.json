@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove gtk-murrine-engine gtk-unico-engine"
 		},
-		"status": { "command": "rpm --quiet --query gtk-murrine-engine gtk-unico-engine" }
+		"status": { "command": "apt --quiet --query gtk-murrine-engine gtk-unico-engine" }
 	}
 }

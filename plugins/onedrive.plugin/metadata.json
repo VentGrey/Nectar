@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove onedrive"
 		},
-		"status": { "command": "rpm --quiet --query onedrive" }
+		"status": { "command": "apt --quiet --query onedrive" }
 	}
 }

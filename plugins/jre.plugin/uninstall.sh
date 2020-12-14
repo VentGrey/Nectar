@@ -6,7 +6,7 @@ else
     ARCH="x86"
 fi
 
-PACKAGE=$(rpm --query --all jre1.8* | head -n 1)
+PACKAGE=$(apt --query --all jre1.8* | head -n 1)
 
 dnf -y erase "$PACKAGE"
 

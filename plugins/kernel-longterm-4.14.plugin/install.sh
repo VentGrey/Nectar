@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rpm -q --quiet kernel-devel
+apt -q --quiet kernel-devel
 kernel_devel_test=$?
 
 if [ $kernel_devel_test == 0 ] ; then

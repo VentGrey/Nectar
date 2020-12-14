@@ -4,7 +4,7 @@
 # Setup variables
 LOG_DIR="/var/log/fedy/skype"
 LOG_FILE="${LOG_DIR}/skype.log"
-RPM_URI="https://go.skype.com/skypeforlinux-64.rpm"
+RPM_URI="https://go.skype.com/skypeforlinux-64.apt"
 
 
 # Add a line feed if the file already exists

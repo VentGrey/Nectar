@@ -12,6 +12,6 @@
 			"label": "Remove",
 			"command": "run-as-root -s uninstall.sh"
 		},
-		"status": { "command": "rpm --quiet --query flat-remix-gnome" }
+		"status": { "command": "apt --quiet --query flat-remix-gnome" }
 	}
 }

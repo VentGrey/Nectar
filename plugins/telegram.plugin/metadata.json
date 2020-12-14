@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y remove telegram-desktop"
 		},
-		"status": { "command": "rpm --quiet --query telegram-desktop" }
+		"status": { "command": "apt --quiet --query telegram-desktop" }
 	}
 }

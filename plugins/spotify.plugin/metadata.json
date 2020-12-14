@@ -13,6 +13,6 @@
 			"label": "Remove",
 			"command": "run-as-root dnf -y erase spotify-client lpf-spotify-client"
 		},
-		"status": { "command": "rpm --quiet --query spotify-client" }
+		"status": { "command": "apt --quiet --query spotify-client" }
 	}
 }
